@@ -9,16 +9,16 @@ from rps import moves, asciiArt
 # verify it is correct and not allow continuation of 
 # the application until the criteria is met
 def getUserInput():
-    mv = input("What is your move? (r/p/s)")
+    mv = input("\nWhat is your move? (r/p/s)")
     if mv != "r" and mv != "R" and mv != "p" and mv != "P" and mv != "s" and mv != "S" and mv != "q" and mv != "Q":
-        print("Your selection was incorrect... Please use r, p, s, or q as a selection.")
+        print("\nYour selection was incorrect... Please use r, p, s, or q as a selection.")
         return getUserInput()
     else:
         return mv
 
 def checkQuit(mv):
     if mv == "q" or mv == "Q":
-        print("Exiting RPS...")
+        print("\nExiting RPS...")
         time.sleep(2)
         sys.exit()
 
@@ -31,7 +31,10 @@ def handleRound(mv):
 # Game loop variable
 RUNNING = True
 
-print("You can exit the program by entering 'q' for quit.")
+time.sleep(1)
+print(asciiArt.title)
+time.sleep(1)
+print("\n\nYou can exit the program by entering 'q' for quit.\n\n")
 time.sleep(2)
 
 while RUNNING == True:
